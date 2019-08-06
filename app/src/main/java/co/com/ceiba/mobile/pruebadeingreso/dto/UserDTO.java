@@ -7,10 +7,6 @@ public class UserDTO {
     private String email;
     private String phone;
 
-
-
-//private addres //Pendiente por desarrollar
-
     public UserDTO(Integer id, String name, String email,String phone) {
         this.id = id;
         this.name = name;

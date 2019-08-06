@@ -2,6 +2,7 @@ package co.com.ceiba.mobile.pruebadeingreso.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.text.Editable;
@@ -17,20 +18,17 @@ import co.com.ceiba.mobile.pruebadeingreso.R;
 import co.com.ceiba.mobile.pruebadeingreso.logic.UserLogic;
 import co.com.ceiba.mobile.pruebadeingreso.model.InterUser;
 
-
 public class MainActivity extends Activity {
-
-//    TextInputEditText editTextSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*Se llama el metodo actionGetUser para
+        que liste todos los usuarios
+        */
         actionGetUser();
-
-        actionGetFilterName();
-
     }
 
     @Override
@@ -39,7 +37,13 @@ public class MainActivity extends Activity {
     }
 
     public void actionGetUser() {
+
         try {
+
+            /*Se crea la instancia de la clase usuario logica
+              Y se realiza llamado al metodo que trae todos los
+              Usuarios y se le pasa el contexto
+            */
             InterUser interUser = new UserLogic();
             interUser.getUser(this);
 
@@ -47,18 +51,5 @@ public class MainActivity extends Activity {
             Log.e("Error", e.getMessage());
         }
     }
-
-    public void actionGetFilterName(){
-
-        try {
-
-            InterUser interUser = new UserLogic();
-            interUser.getUserForName(this);
-        }catch (Exception e){
-            Log.e("Error", e.getMessage());
-        }
-
-    }
-
 
 }

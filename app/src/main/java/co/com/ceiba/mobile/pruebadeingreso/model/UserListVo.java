@@ -1,19 +1,29 @@
-package co.com.ceiba.mobile.pruebadeingreso.adapter;
+package co.com.ceiba.mobile.pruebadeingreso.model;
 
 public class UserListVo {
 
+    private Integer id;
     private String name;
     private String phone;
     private String email;
 
-    public UserListVo(){
+    public UserListVo() {
 
     }
 
-    public UserListVo(String name, String phone, String email) {
+    public UserListVo(String name, String phone, String email, Integer id) {
+        this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

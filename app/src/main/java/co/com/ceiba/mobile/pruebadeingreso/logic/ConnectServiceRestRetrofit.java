@@ -12,6 +12,7 @@ public class ConnectServiceRestRetrofit{
 
         try {
 
+            /*Se crea y se conecta a la url base y  se retorna la instancia de la conexion*/
             Retrofit retrofit = new Retrofit.Builder().baseUrl(Endpoints.URL_BASE)
                     .addConverterFactory(GsonConverterFactory.create()).build();
 
